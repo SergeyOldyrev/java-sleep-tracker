@@ -73,6 +73,7 @@ public class SleepTrackerApp {
 
     public SleepTrackerApp() {
         metrics = new ArrayList<>();
+        metrics.add(sessions -> new SleepAnalysisResult("Всего сессий сна", String.valueOf(sessions.size())));
         metrics.add(new MinDurationCalculator());
         metrics.add(new MaxDurationCalculator());
         metrics.add(new AverageDurationCalculator());

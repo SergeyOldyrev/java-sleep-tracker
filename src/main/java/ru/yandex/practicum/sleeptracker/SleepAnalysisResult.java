@@ -1,26 +1,37 @@
 package ru.yandex.practicum.sleeptracker;
 
+import java.util.Objects;
+
 public class SleepAnalysisResult {
     private final String label;
-    private final int value;
+    private final int intValue;
     private final String stringValue;
 
     public SleepAnalysisResult(String label, int value) {
         this.label = label;
-        this.value = value;
+        this.intValue = value;
         this.stringValue = null;
     }
-    public SleepAnalysisResult(String label, String stringValue) {
+
+    public SleepAnalysisResult(String label, String value) {
         this.label = label;
-        this.value = 0;
-        this.stringValue = stringValue;
+        this.intValue = 0;
+        this.stringValue = value;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public String getValue() {
+        if (stringValue != null) {
+            return stringValue;
+        }
+        return String.valueOf(intValue);
     }
 
     @Override
     public String toString() {
-        if (stringValue != null) {
-            return label + ": " + stringValue;
-        }
-        return label + ": " + value + " ч";
+        return label + ": " + Objects.requireNonNullElse(stringValue, intValue);
     }
 }
