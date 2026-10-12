@@ -32,6 +32,7 @@ class AverageDurationCalculatorTest {
 
         assertEquals("-1", result.getValue());
     }
+
     @Test
     void shouldHandleSingleSession() {
         List<SleepingSession> sessions = List.of(
