@@ -1,6 +1,7 @@
 package ru.yandex.practicum.sleeptracker;
 
 import org.junit.jupiter.api.Test;
+import ru.yandex.practicum.sleeptracker.calculator.ChronotypeCalculator;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
